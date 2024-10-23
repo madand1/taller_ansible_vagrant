@@ -3,7 +3,7 @@ all:
     servidores:
       hosts:
         nodo1: 
-          ansible_ssh_host: 
-          ansible_ssh_user:  
-          ansible_ssh_private_key_file: 
+          ansible_ssh_host:172.22.8.88 
+          ansible_ssh_user: usuario
+          ansible_ssh_private_key_file: /home/madandy/.ssh/id_rsa #Es la mia propia 
     
