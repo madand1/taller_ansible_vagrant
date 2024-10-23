@@ -1,14 +1,14 @@
-- hosts: 
+- hosts: maquina1 #Es un server web
   become: true
   roles:
-   - role: 
+   - role: apache2
 
-- hosts: 
+- hosts: maquina2 #Es un server bases de datos
   become: true
   roles:
-   - role: 
+   - role: mariadb
 
-- hosts: 
+- hosts: all
   become: true
   roles:
-   - role: 
+   - role: commons

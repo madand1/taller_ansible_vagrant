@@ -2,13 +2,13 @@ all:
   children:
     servidores_web:
       hosts:
-        nombre_de_la_primera_maquina: 
-          ansible_ssh_host: 
-          ansible_ssh_user: 
-          ansible_ssh_private_key_file:
+        maquina1:
+          ansible_ssh_host: 192.168.1.158
+          ansible_user: usuario
+          ansible_ssh_private_key_file: /home/madandy/.ssh/id_rsa
     servidores_bd:
       hosts:
-        nombre_de_la_segunda_maquina: 
-          ansible_ssh_host:
-          ansible_ssh_user:
-          ansible_ssh_private_key_file:
+        maquina2:
+          ansible_ssh_host: 192.168.1.159
+          ansible_user: usuario
+          ansible_ssh_private_key_file: /home/madandy/.ssh/id_rsa
