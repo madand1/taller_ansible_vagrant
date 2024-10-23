@@ -2,8 +2,11 @@ all:
   children:
     servidores:
       hosts:
-        nodo1: 
-          ansible_ssh_host:172.22.8.88 
+        ansible:
+          ansible_ssh_host: 192.168.1.157
           ansible_ssh_user: usuario
-          ansible_ssh_private_key_file: /home/madandy/.ssh/id_rsa #Es la mia propia 
-    
+          ansible_ssh_private_key_file: /home/madandy/.ssh/id_rsa
+          bd_name: madandy
+          bd_user: madandy
+          bd_pass: madandy
+

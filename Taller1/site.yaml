@@ -1,27 +1,34 @@
 - hosts: all
   become: true
   tasks:
-      # Actualizamos paquetes
+    # Actualizamos paquetes
     - name: Actualizamos el sistema
-      apt: update_cache=yes upgrade=yes
-      # Instalar paquetes
+      apt: 
+        update_cache: yes
+        upgrade: yes
+
+    # Instalar paquetes
     - name: "Instalar paquetes con apt"
-      apt: # Aquí tienes que poner lo necesario para instalar git y apache2
-      # Copia un fichero a la máquina remota
+      apt: 
+        name: 
+          - git
+          - apache2
+        state: present  # Asegura que el paquete esté instalado
+
+    # Copia un fichero a la máquina remota
     - name: "Copiar fichero a la máquina remota"
       copy:
         src: files/foo.conf
-        dest: 
+        dest: /etc/foo.txt  # Aquí debes poner la ruta de destino correcta
         owner: root
         group: root
         mode: '0644'
 
-      # Copia un template a un fichero
-    - name: "Copiar un tamplate a un fichero de la máquina remota"
+    # Copia un template a un fichero
+    - name: "Copiar un template a un fichero de la máquina remota"
       template: 
         src: template/index.j2
-        dest: 
+        dest: /var/www/html/index.html  # Aquí debes poner la ruta de destino correcta
         owner: www-data
         group: www-data
-        mode: 0644
-    
+        mode: '0644'
